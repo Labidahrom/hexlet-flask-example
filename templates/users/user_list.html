@@ -1,0 +1,15 @@
+{% if messages %}
+  <ul class=flashes>
+  {% for category, message in messages %}
+    <li>{{ message }}</li>
+  {% endfor %}
+  </ul>
+{% endif %}
+<ul>
+  {% for user in users %}
+  <li><a href="http://127.0.0.1:5000/users/{{user.id}}">{{ user.id }}</a> {{ user.name }} {{ user.email }}
+  <a href="http://127.0.0.1:5000/users/{{user.id}}/edit">Update</a>
+  <a href="http://127.0.0.1:5000/users/{{user.id}}/delete">Delete</a></li>
+  {% endfor %}
+</ul>
+<a href="http://127.0.0.1:5000/users/new">ДОбавить</a>

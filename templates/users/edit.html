@@ -1,0 +1,23 @@
+<h1>Меняем пользователя {{ user.name }}</h1>
+<form action='/users/{{user.id}}/patch' method="post">
+  <div>
+    <label>
+      Имя
+      <input type="text" name="name" placeholder="{{ user.name }}" required value="{{ user.name }}">
+    </label>
+    {% if errors['name'] %}
+      <div>{{ errors['name'] }}</div>
+    {% endif %}
+  </div>
+  <div>
+    <label>
+      Email
+      <input type="email" name="email" placeholder="{{ user.email }}" required value="{{ user.email }}">
+    </label>
+    {% if errors['email'] %}
+      <div>{{ errors['email'] }}</div>
+    {% endif %}
+    </div>
+  </div>
+  <input type="submit" value="Update">
+</form>

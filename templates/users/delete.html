@@ -1,0 +1,4 @@
+<h1>Удаление пользователя {{ user.name }}</h1>
+<form action="{{ url_for('delete_user1', id=user.id) }}" method="post">
+  <input type="submit" value="Remove">
+</form>
